@@ -1,0 +1,21 @@
+multiset 是关联容器的一种，排序好的集合，multiset支持重复，而set会去重。
+头文件：#include <set>
+初始化：
+multiset<int>set1;//默认升序排列
+multiset<int,less<int>>set1;//升序排列
+multiset<int,greater<int>>set1;//降序排列
+
+常用函数：
+函数	用法	作用
+insert()	set1.insert(n)	向集合插入元素n,n可以为重复值
+erase()	set1.erase(10)	在set1中删除元素等于10的所有副本
+empty()	set1.empty()	返回值bool类型，若set1为空，则返回true
+swap()	set1.swap(set2)	将set1和set2交换
+size()	set1.size()	返回值为int类型，set1当前存放的元素的个数
+find()	set1.find(n)	返回iterator，指向第一个找到数值n的位置，若找不到则返回的iterator等于set1.end()
+resize()	set1.resize(10)	重置set1的大小为10
+lower_bound()	set1.lower_bound(n)	返回set1中第一个找到数值n的位置的iterator，如果找不到则返回end()
+upper_bount()	set1.upper_bound(n)	返回set1中最后一个找到数值n的位置的后一个位置的iterator，如果找不到则返回end()
+count()	set1.count(n)	确定set1中数值n出现的次数
+
+
