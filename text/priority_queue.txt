@@ -1,0 +1,20 @@
+priority_queue 优先队列  （包含的头文件：#include<queue>
+不能用list初始化。
+优先队列具有队列的所有特性，包括基本操作，只是在这基础上添加了内部的一个排序，它本质是一个堆实现的
+
+top 访问队头元素
+empty 队列是否为空
+size 返回队列内元素个数
+push 插入元素到队尾 (并排序)
+emplace 原地构造一个元素并插入队列
+pop 弹出队头元素
+swap 交换内容
+
+构造：
+//升序队列
+priority_queue <int,vector<int>,greater<int> > q;
+//降序队列
+priority_queue <int,vector<int>,less<int> >q;
+priority_queue<int> p; 默认是降序队列
+//greater和less是std实现的两个仿函数
+

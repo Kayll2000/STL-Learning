@@ -1,0 +1,79 @@
+string 字符 专门存储和处理字符类型的容器。
+
+构造：
+	string str;
+	string str("123");
+	string str('A');
+	string str{"123"}
+	string str{'a','b','c'}
+
+a.assign(b,begin,len);
+//从字符串b的第(begin)个字符开始向后数(len)个字符(包括begin)的字符串赋值给字符串a
+
+=：字符串赋值
+例: s1为空, 则: s1=“abc"之后, s1变为"abc”
+
++和 +=：连接字符串
+用的较多的是 +=
+例: s1=“abc”, s2=“123”, 则: s1+=s2之后, s1 变为 “abc123”, s2不变
+例: s1=“abc”, 则: s1+="string"之后, s1 变为 “abcstring”
+例: s1=“abc”, 则: s1+='p’之后, s1 变为 “abcp”
+
+<、>=、< 和 <=：字符串比较 (例如a < b)
+按字典序判断字符串的大小, 并返回判断结果.
+例: s1=“abc”, s2=“abb”, 则 s1<s2 返回 false
+例: s1=“abc”, s2=“abb”, 则 s1>s2 返回 true
+
+==、!=：比较字符串
+判断字符串是否相同
+例: s1=“abc”, s2=“abb”, 则 s1 ==s2 返回 false
+
+<<、>>：输出、输入字符串
+直接使用cin和cout输出
+string str;
+cin>>str;
+cout<<str;
+
+常用函数：
+str.swap(str1);//交换两个容器内容
+str.push_back('s');//在str末尾添加字符‘s’
+str.pop_back();//删除str最后一个字符
+str.front();//返回第一个元素
+str.back();//返回最后一个元素
+str.clear()；//清空容器
+str.length();//返回str长度
+str.size();//返回str容器内目前元素个数
+str.max_size();//返回所能存储的最大元素个数
+str.resize(n);//设置str的size，设置后size = n
+str.resize(n,'n');//重新设置str的大小为n，如果尺寸变大，多出来的空间用'n'代替
+str.capacity();//返回str容量
+str.reserve(n)//设置str的capacity >= n,执行后str.capacity() = 2*n -1
+
+添加元素	str.insert(2,3,'s');//在在第二个为即第三个元素前插入3个‘s’
+	str.append(3,'s');//在str末尾添加3个‘s’
+	str.append(strbat);//在str末尾添加strbat
+
+删除元素	str.erase(3);//删除第四个及以后的元素，即删除str[3] - str[n-1]
+	str.erase(3,2);//删除str[3]和str[4]
+更改数据	str.replace(2,3,4,'s');//将str[2] str[3] str[4] 替换成4个‘s’
+查找数据	str.find('s');//返回's' 在str首次出现的位置
+	str.find('s',2);//返回‘s’在str[2] 到str[n-1]出现的位置
+	str.rfind(str1);//反向查找 str1 在 str 中首次出现的位置
+	str.find_first_of(str1);//返回 str1 中任意一个字符在 str 中首次出现的位置
+	str.find_first_not_of(str1);//返回除 str1 以外的任意一个字符在 str 中首次出现的位置
+	str.find_last_of(str1);
+	//返回 str1 中任意一个字符在 str 最后一次出现的位置
+	str.find_last_not_of(str1);
+	//返回除 str1 以外的任意一个字符在 str 最后一次出现的位置
+
+substr (子串查找)
+str.substr(2);
+//返回 str[2]~str[n-1], 不对 str 进行操作
+//例:str="abcde"
+//str.substr(2) 就等于 "cde"
+
+str.substr(2,5);
+//返回 str[2]~str[2+5-1]
+//例:str="abcdefghijklmn"
+//str.substr(2,5) 就等于 "cdefg"
+

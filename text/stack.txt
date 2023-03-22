@@ -1,0 +1,9 @@
+栈(stack)本身就是一种后进先出的数据结构。在STL中stack中只能通过top()来访问栈顶元素
+
+stack常用函数实例解析
+(1). push(x) 将x入栈
+(2). top() 获得栈顶元素
+(3). pop() 用以弹出栈顶元素
+(4). empty() 可以检测stack内是否为空，返回true为空，返回false为非空
+(5). size() 返回stack内元素的个数
+
